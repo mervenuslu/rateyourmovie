@@ -2,7 +2,7 @@ const mongoose = require("mongoose")
 
 const schema = mongoose.Schema({
     userId: Number,
-    movieId: Number,
+    theMovieDbId: Number,
     rate: Number,
     seenStatus: Boolean
 })

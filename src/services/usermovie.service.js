@@ -9,19 +9,25 @@ exports.getUserMovies = function (userId) {
 
 exports.getUserMovie = function (userId, movieId) {
 
-    return UserMovie.findOne({ userId: userId, movieId: movieId });
+    return UserMovie.findOne({ userId: userId, theMovieDbId: movieId });
 }
 
 
-exports.postUserMovie = function (userMovie) {
+exports.postUserMovie = async function (userMovie) {
+    var userMovieResult = await UserMovie.exists({ userId: userMovie.userId, theMovieDbId: userMovie.theMovieDbId });
+    if (userMovieResult == false) {
+        userMovie = await userMovie.save()
+        return userMovie;
 
-    return userMovie.save();
+    } else {
+        return userMovie;
+    }
 }
 
 
-exports.putUserMovie = function (userMovie) {
+exports.putUserMovie = async function (userMovie) {
 
-    var _userMovie = getUserMovie(userMovie.userId, userMovie.movieId)
+    var _userMovie = await getUserMovie(userMovie.userId, userMovie.theMovieDbId)
     _userMovie.rate = userMovie.rate;
     _userMovie.seenStatus = userMovie.seenStatus;
 
