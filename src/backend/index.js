@@ -12,7 +12,7 @@ mongoose
     app.use("/api/v1", api);
    
 
-    app.listen(5000, () => {
+    app.listen(8080, () => {
       console.log("Server has started!")
     })
   })
