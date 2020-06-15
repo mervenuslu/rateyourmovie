@@ -11,8 +11,8 @@ mongoose
     app.use(bodyParser.json());
     app.use("/api/v1", api);
    
-
-    app.listen(8080, () => {
+    var port = process.env.PORT || 8080;
+    app.listen(port, () => {
       console.log("Server has started!")
     })
   })
