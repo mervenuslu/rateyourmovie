@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "debug": "node --inspect index.js",
     "heroku-prebuild": "npm install pm2 -g",
-    "start": "pm2 start ecosystem.config.js --env production"
+    "start": "pm2-runtime start ecosystem.config.js --env production"
   },
   "author": "merveuslu",
   "license": "ISC",
@@ -17,5 +17,8 @@
     "mongodb": "^3.5.7",
     "mongoose": "^5.9.13",
     "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "pm2": "^4.4.0"
   }
 }
