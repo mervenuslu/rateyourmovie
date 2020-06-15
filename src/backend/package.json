@@ -17,8 +17,5 @@
     "mongodb": "^3.5.7",
     "mongoose": "^5.9.13",
     "request": "^2.88.2"
-  },
-  "devDependencies": {
-    "pm2": "^4.4.0"
   }
 }
