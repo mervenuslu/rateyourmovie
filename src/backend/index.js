@@ -14,10 +14,10 @@ db.once('open', function callback () {
 const app = express()
 
 app.use(bodyParser.json());
-app.use("/api/v1", api);
+  app.use("/api/v1", api);
 
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 8080;
 app.listen(port, () => {
-  console.log("Server has started!")
+  console.log("Server has started!" + port)
 })
 
