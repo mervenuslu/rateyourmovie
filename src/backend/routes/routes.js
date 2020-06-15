@@ -1,10 +1,10 @@
-const express = require("express")
+const express = require('express')
 const router = express.Router()
-const movieRoutes = require("../routes/movie.routes")
-const userMovieRoutes = require("../routes/usermovie.routes")
+const movieRoutes = require('../routes/movie.routes')
+const userMovieRoutes = require('../routes/usermovie.routes')
 
-router.use('/movie', movieRoutes);
-router.use('/usermovie', userMovieRoutes);
+router.use('/movies', movieRoutes);
+router.use('/usermovies', userMovieRoutes);
 
 
 module.exports = router
